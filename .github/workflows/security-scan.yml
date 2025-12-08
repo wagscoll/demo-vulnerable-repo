@@ -28,7 +28,7 @@ jobs:
         run: bandit -r . -f json -o bandit-output.json
 
       - name: Convert Bandit JSON to SARIF
-        uses: wagscoll/CS4499-Project2-Bandit/bandit-sarif-action@main
+        uses: wagscoll/CS4499-Project2-Bandit@main
         with:
           input-file: bandit-output.json
           output-file: bandit.sarif
