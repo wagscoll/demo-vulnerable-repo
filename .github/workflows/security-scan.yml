@@ -25,7 +25,7 @@ jobs:
         run: pip install bandit pyyaml
 
       - name: Run Bandit
-        run: bandit -r . -f json -o bandit-output.json
+        run: bandit -r . -f json -o bandit-output.json || true
 
       - name: Convert Bandit JSON to SARIF
         uses: wagscoll/CS4499-Project2-Bandit@main
