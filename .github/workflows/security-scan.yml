@@ -1,0 +1,39 @@
+name: Security Scan
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  bandit-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Bandit
+        run: pip install bandit pyyaml
+
+      - name: Run Bandit
+        run: bandit -r . -f json -o bandit-output.json
+
+      - name: Convert Bandit JSON to SARIF
+        uses: wagscoll/CS4499-Project2-Bandit/bandit-sarif-action@main
+        with:
+          input-file: bandit-output.json
+          output-file: bandit.sarif
+
+      - name: Upload SARIF to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: bandit.sarif
