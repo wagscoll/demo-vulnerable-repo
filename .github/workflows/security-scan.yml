@@ -33,20 +33,6 @@ jobs:
           input-file: bandit-output.json
           output-file: bandit.sarif
 
-      - name: Upload Bandit Output
-        uses: actions/upload-artifact@v4
-        with:
-          name: bandit-output
-          path: bandit-output.json
-
-      - name: Upload SARIF Output
-        uses: actions/upload-artifact@v4
-        with:
-          name: bandit-sarif
-          path: bandit.sarif
-
-
-
       - name: Upload SARIF to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
         with:

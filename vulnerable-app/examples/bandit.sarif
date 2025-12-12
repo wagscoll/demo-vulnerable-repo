@@ -1,0 +1,327 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Bandit",
+          "version": "unknown",
+          "informationUri": "https://bandit.readthedocs.io/",
+          "rules": [
+            {
+              "id": "B404",
+              "name": "blacklist",
+              "shortDescription": {
+                "text": "Consider possible security implications associated with the subprocess module"
+              },
+              "fullDescription": {
+                "text": "Consider possible security implications associated with the subprocess module."
+              },
+              "help": {
+                "text": "Bandit test B404: blacklist. Consider possible security implications associated with the subprocess module. See: https://bandit.readthedocs.io/en/1.9.2/blacklists/blacklist_imports.html#b404-import-subprocess"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "bandit",
+                  "severity:low",
+                  "confidence:high"
+                ],
+                "precision": "high",
+                "security-severity": "2.0"
+              }
+            },
+            {
+              "id": "B105",
+              "name": "hardcoded_password_string",
+              "shortDescription": {
+                "text": "Possible hardcoded password: 'theCakeIsALie'"
+              },
+              "fullDescription": {
+                "text": "Possible hardcoded password: 'theCakeIsALie'"
+              },
+              "help": {
+                "text": "Bandit test B105: hardcoded_password_string. Possible hardcoded password: 'theCakeIsALie' See: https://bandit.readthedocs.io/en/1.9.2/plugins/b105_hardcoded_password_string.html"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "bandit",
+                  "severity:low",
+                  "confidence:medium"
+                ],
+                "precision": "high",
+                "security-severity": "2.0"
+              }
+            },
+            {
+              "id": "B324",
+              "name": "hashlib",
+              "shortDescription": {
+                "text": "Use of weak MD5 hash for security"
+              },
+              "fullDescription": {
+                "text": "Use of weak MD5 hash for security. Consider usedforsecurity=False"
+              },
+              "help": {
+                "text": "Bandit test B324: hashlib. Use of weak MD5 hash for security. Consider usedforsecurity=False See: https://bandit.readthedocs.io/en/1.9.2/plugins/b324_hashlib.html"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "bandit",
+                  "severity:high",
+                  "confidence:high"
+                ],
+                "precision": "high",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "B602",
+              "name": "subprocess_popen_with_shell_equals_true",
+              "shortDescription": {
+                "text": "subprocess call with shell=True identified, security issue"
+              },
+              "fullDescription": {
+                "text": "subprocess call with shell=True identified, security issue."
+              },
+              "help": {
+                "text": "Bandit test B602: subprocess_popen_with_shell_equals_true. subprocess call with shell=True identified, security issue. See: https://bandit.readthedocs.io/en/1.9.2/plugins/b602_subprocess_popen_with_shell_equals_true.html"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "bandit",
+                  "severity:high",
+                  "confidence:high"
+                ],
+                "precision": "high",
+                "security-severity": "8.0"
+              }
+            },
+            {
+              "id": "B506",
+              "name": "yaml_load",
+              "shortDescription": {
+                "text": "Use of unsafe yaml load"
+              },
+              "fullDescription": {
+                "text": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load()."
+              },
+              "help": {
+                "text": "Bandit test B506: yaml_load. Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load(). See: https://bandit.readthedocs.io/en/1.9.2/plugins/b506_yaml_load.html"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "bandit",
+                  "severity:medium",
+                  "confidence:high"
+                ],
+                "precision": "high",
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "B307",
+              "name": "blacklist",
+              "shortDescription": {
+                "text": "Use of possibly insecure function - consider using safer ast"
+              },
+              "fullDescription": {
+                "text": "Use of possibly insecure function - consider using safer ast.literal_eval."
+              },
+              "help": {
+                "text": "Bandit test B307: blacklist. Use of possibly insecure function - consider using safer ast.literal_eval. See: https://bandit.readthedocs.io/en/1.9.2/blacklists/blacklist_calls.html#b307-eval"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "bandit",
+                  "severity:medium",
+                  "confidence:high"
+                ],
+                "precision": "high",
+                "security-severity": "5.0"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "B404",
+          "level": "note",
+          "message": {
+            "text": "Consider possible security implications associated with the subprocess module."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vulnerable-app/app.py",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "test_name": "blacklist",
+            "more_info": "https://bandit.readthedocs.io/en/1.9.2/blacklists/blacklist_imports.html#b404-import-subprocess"
+          }
+        },
+        {
+          "ruleId": "B105",
+          "level": "note",
+          "message": {
+            "text": "Possible hardcoded password: 'theCakeIsALie'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vulnerable-app/app.py",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 12
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "LOW",
+            "confidence": "MEDIUM",
+            "test_name": "hardcoded_password_string",
+            "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b105_hardcoded_password_string.html"
+          }
+        },
+        {
+          "ruleId": "B324",
+          "level": "error",
+          "message": {
+            "text": "Use of weak MD5 hash for security. Consider usedforsecurity=False"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vulnerable-app/app.py",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 12
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "confidence": "HIGH",
+            "test_name": "hashlib",
+            "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b324_hashlib.html"
+          }
+        },
+        {
+          "ruleId": "B602",
+          "level": "error",
+          "message": {
+            "text": "subprocess call with shell=True identified, security issue."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vulnerable-app/app.py",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 12
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "HIGH",
+            "confidence": "HIGH",
+            "test_name": "subprocess_popen_with_shell_equals_true",
+            "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b602_subprocess_popen_with_shell_equals_true.html"
+          }
+        },
+        {
+          "ruleId": "B506",
+          "level": "warning",
+          "message": {
+            "text": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load()."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vulnerable-app/app.py",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 16
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "test_name": "yaml_load",
+            "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b506_yaml_load.html"
+          }
+        },
+        {
+          "ruleId": "B307",
+          "level": "warning",
+          "message": {
+            "text": "Use of possibly insecure function - consider using safer ast.literal_eval."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vulnerable-app/app.py",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 12
+                }
+              }
+            }
+          ],
+          "properties": {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "test_name": "blacklist",
+            "more_info": "https://bandit.readthedocs.io/en/1.9.2/blacklists/blacklist_calls.html#b307-eval"
+          }
+        }
+      ],
+      "originalUriBaseIds": {
+        "SRCROOT": {
+          "uri": "file:///",
+          "description": {
+            "text": "Repository root"
+          }
+        }
+      }
+    }
+  ]
+}
