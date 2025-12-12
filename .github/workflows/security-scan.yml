@@ -33,11 +33,18 @@ jobs:
           input-file: bandit-output.json
           output-file: bandit.sarif
 
-      - name: Print Bandit JSON
-        run: cat bandit-output.json
+      - name: Upload Bandit Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: bandit-output
+          path: bandit-output.json
 
-      - name: Print SARIF File
-        run: cat bandit.sarif
+      - name: Upload SARIF Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: bandit-sarif
+          path: bandit.sarif
+
 
 
       - name: Upload SARIF to GitHub Code Scanning
