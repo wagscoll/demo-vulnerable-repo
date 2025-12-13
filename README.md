@@ -13,6 +13,20 @@ The security scan workflow:
 - Converts JSON to SARIF  
 - Uploads the SARIF results to GitHub Code Scanning
 
+## Included Vulnerabilities
+
+This demo repository intentionally includes insecure code patterns to
+demonstrate Bandit SARIF conversion and GitHub Code Scanning integration.
+
+|      Vulnerability      | Bandit Rule |  Severity |    File   |
+|-------------------------|-------------|---------- |-----------|
+| Hardcoded password      | B105        | Low       | app.py:6  |
+| Weak MD5 hash           | B324        | High      | app.py:10 |
+| subprocess shell=True   | B602        | High      | app.py:14 |
+| Unsafe yaml.load        | B506        | Medium    | app.py:19 |
+| eval() usage            | B307        | Medium    | app.py:23 |
+| subprocess import risk  | B404        | Low       | app.py:2  |
+
 
 ## SARIF to GHAS
 <img width="929" height="925" alt="SARIF to GHAS Integration" src="https://github.com/user-attachments/assets/31d4069c-8cc2-425c-a47b-4de89091ec61" />
