@@ -14,10 +14,13 @@ The security scan workflow:
 - Uploads the SARIF results to GitHub Code Scanning
 
 
-
+## SARIF to GHAS
 <img width="929" height="925" alt="SARIF to GHAS Integration" src="https://github.com/user-attachments/assets/31d4069c-8cc2-425c-a47b-4de89091ec61" />
+
+## Secuity Tab
 <img width="948" height="627" alt="Security Tab" src="https://github.com/user-attachments/assets/51d88e16-30dd-4a65-9073-10af670b7a80" />
 
+## Alerts
 <img width="930" height="547" alt="alert(1)" src="https://github.com/user-attachments/assets/cefc6c07-3511-432c-9f74-a3ad1a495938" />
 <img width="941" height="581" alt="alert(2)" src="https://github.com/user-attachments/assets/0c9942d1-3e46-4266-a2ef-0a355d57dc8b" />
 <img width="945" height="571" alt="alert(3)" src="https://github.com/user-attachments/assets/4cebfd89-8c8d-4468-a1ac-faf2df2b1598" />
